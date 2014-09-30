@@ -1,28 +1,80 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+#include <iostream>
+using namespace std;
+//Enter login with username and password.
+    //If successful, main menu.
+        //Menu tabs such as game, calculator, etc.
+            //Select. Links to another file.
+    //if else, back to login.
+//Log out.
 
-# Precompiled Headers
-*.gch
-*.pch
+string passWord;
+string userName;
+string Finance;
+string Maths;
+string Art;
+string tBG;
+string choices;
+string yesNo;
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+void Finance1()
+{
+    cout << "\n\tWelcome to Finance." << endl;
+    cout << "Do you need a calculator? (Y/N)";
+    cin >> yesNo;
+    if (yesNo == "Y")
+    {
+        cout << "In Progress." << endl;
+    }
+}
+void Maths1()
+{
+    cout << "\tMaths" << endl;
+}
+void Art1()
+{
+    cout << "\tArt" << endl;
+}
+void tGB1()
+{
+    cout << " \t\t\tNEVER COMING OUT." << endl;
+}
 
-# Fortran module files
-*.mod
+void mainMenu()
+{
+    cout << "\n\n\n\t\t\tMAIN MENU" << endl;
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+    cout << "\n\t\t1. Text-based game" << "\t2. Art" << endl;
+    cout << "\n\t\t3. Finance" << "\t\t4. Maths" << endl;
+    cout << "\n\n\t\tWhat would you like to pick?" << endl;
+    cout << "\n\t\t\tType here:";
+    cin >> choices;
+    if (choices == "Finance")
+    {
+        Finance1();
+    }
+    else if (choices == "Maths")
+    {
+        Maths1();
+    }
+    else if (choices == "Art")
+    {
+        Art1();
+    }
+}
+int main()
+{
+    cout << "\t\tWelcome to the Box." << endl;
+    cout << "\n\n\tPlease enter your username:" << endl;
+    cin >> userName;
+    cout << "\n\nPlease enter your password:" << endl;
+    cin >> passWord;
+    if (userName == "Artestia" && passWord == "1234")
+            {
+                mainMenu();
+            }
+    else if (userName != "Artestia" && passWord != "1234")
+            {
+                cout << "Sod off intruder." << endl;
+            }
+    return 0;
+}
